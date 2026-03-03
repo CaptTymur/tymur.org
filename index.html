@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tymur Rudov — Captain · Broker · Storyteller</title>
+  <meta name="description" content="Captain Tymur Rudov — Master Mariner, Freight Broker, YouTube Creator. Maritime expertise, freight brokerage, and education.">
+  <meta property="og:title" content="Captain Tymur Rudov">
+  <meta property="og:description" content="Master Mariner. Freight Broker. Storyteller.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tymur.org">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg-deep: #070d1a;
+      --bg-primary: #0b1628;
+      --bg-secondary: #0f1d32;
+      --bg-card: #132240;
+      --text-primary: #e4eaf4;
+      --text-secondary: #8899b0;
+      --accent: #0ea5e9;
+      --accent-alt: #06b6d4;
+      --accent-dim: rgba(14, 165, 233, 0.12);
+      --accent-glow: rgba(6, 182, 212, 0.25);
+      --border: #1a2d4a;
+      --radius: 10px;
+      --nav-height: 64px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg-deep);
+      color: var(--text-primary);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Navigation ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      height: var(--nav-height);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 2rem;
+      background: rgba(7, 13, 26, 0.85);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem; font-weight: 700;
+      color: var(--text-primary);
+      text-decoration: none;
+    }
+    .nav-links { display: flex; align-items: center; gap: 1.5rem; list-style: none; }
+    .nav-links a {
+      color: var(--text-secondary); text-decoration: none;
+      font-size: 0.875rem; font-weight: 500;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--accent); }
+    .lang-btn {
+      background: var(--accent-dim); border: 1px solid var(--border);
+      color: var(--accent); padding: 0.35rem 0.75rem;
+      border-radius: 6px; cursor: pointer; font-size: 0.8rem;
+      font-weight: 600; transition: all 0.2s;
+    }
+    .lang-btn:hover { background: var(--accent); color: var(--bg-deep); }
+
+    .nav-hamburger {
+      display: none; background: none; border: none; cursor: pointer;
+      width: 28px; height: 20px; position: relative; flex-shrink: 0;
+    }
+    .nav-hamburger span {
+      display: block; position: absolute; left: 0; right: 0;
+      height: 2px; background: var(--text-secondary); border-radius: 2px;
+      transition: all 0.3s;
+    }
+    .nav-hamburger span:nth-child(1) { top: 0; }
+    .nav-hamburger span:nth-child(2) { top: 9px; }
+    .nav-hamburger span:nth-child(3) { top: 18px; }
+
+    /* ── Sections ── */
+    section { padding: 6rem 2rem; }
+    .container { max-width: 960px; margin: 0 auto; }
+
+    .section-label {
+      display: inline-block;
+      font-size: 0.75rem; font-weight: 600; text-transform: uppercase;
+      letter-spacing: 0.1em; color: var(--accent);
+      background: var(--accent-dim); padding: 0.3rem 0.8rem;
+      border-radius: 20px; margin-bottom: 1rem;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem; font-weight: 700; margin-bottom: 1.25rem;
+      line-height: 1.25;
+    }
+    .section-text {
+      color: var(--text-secondary); font-size: 1rem;
+      max-width: 640px; line-height: 1.75;
+    }
+
+    /* ── Hero ── */
+    .hero {
+      min-height: 100vh; display: flex; align-items: center;
+      justify-content: center; text-align: center;
+      padding-top: var(--nav-height);
+      background:
+        radial-gradient(ellipse 60% 50% at 50% 40%, var(--accent-glow), transparent),
+        var(--bg-deep);
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      font-weight: 700; line-height: 1.15;
+      margin-bottom: 1rem;
+    }
+    .hero .subtitle {
+      font-size: clamp(1rem, 2.5vw, 1.25rem);
+      color: var(--text-secondary); margin-bottom: 2.5rem;
+    }
+    .hero-cta {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: var(--accent); color: var(--bg-deep);
+      padding: 0.75rem 1.75rem; border-radius: 8px;
+      text-decoration: none; font-weight: 600; font-size: 0.95rem;
+      transition: all 0.2s;
+    }
+    .hero-cta:hover { background: var(--accent-alt); transform: translateY(-1px); }
+    .hero-cta svg { width: 18px; height: 18px; }
+
+    /* ── About ── */
+    .about { background: var(--bg-primary); }
+    .about-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 2rem; margin-top: 2rem;
+    }
+    .stat-card {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1.5rem;
+      transition: border-color 0.2s;
+    }
+    .stat-card:hover { border-color: var(--accent); }
+    .stat-number {
+      font-size: 2rem; font-weight: 700; color: var(--accent);
+      font-family: 'Playfair Display', serif;
+    }
+    .stat-label { font-size: 0.875rem; color: var(--text-secondary); margin-top: 0.25rem; }
+
+    /* ── YouTube ── */
+    .youtube { background: var(--bg-deep); }
+    .yt-card {
+      display: flex; align-items: center; gap: 2rem;
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 2rem; margin-top: 2rem;
+      transition: border-color 0.2s;
+    }
+    .yt-card:hover { border-color: var(--accent); }
+    .yt-icon {
+      flex-shrink: 0; width: 64px; height: 64px;
+      background: #ff0000; border-radius: 14px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .yt-icon svg { width: 32px; height: 32px; fill: #fff; }
+    .yt-info h3 { font-size: 1.25rem; font-weight: 700; margin-bottom: 0.25rem; }
+    .yt-info .yt-subs { color: var(--accent); font-size: 0.875rem; font-weight: 600; margin-bottom: 0.5rem; }
+    .yt-info p { color: var(--text-secondary); font-size: 0.9rem; }
+    .yt-link {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      color: var(--accent); text-decoration: none;
+      font-weight: 600; font-size: 0.9rem; margin-top: 0.75rem;
+      transition: gap 0.2s;
+    }
+    .yt-link:hover { gap: 0.7rem; }
+    .yt-link svg { width: 16px; height: 16px; }
+
+    /* ── Brokerage ── */
+    .brokerage { background: var(--bg-primary); }
+    .region-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.25rem; }
+    .region-tag {
+      background: var(--accent-dim); border: 1px solid var(--border);
+      color: var(--text-primary); padding: 0.4rem 0.9rem;
+      border-radius: 20px; font-size: 0.825rem; font-weight: 500;
+    }
+    .broker-link {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      color: var(--accent); text-decoration: none;
+      font-weight: 600; font-size: 0.95rem; margin-top: 1.5rem;
+      transition: gap 0.2s;
+    }
+    .broker-link:hover { gap: 0.7rem; }
+    .broker-link svg { width: 16px; height: 16px; }
+
+    /* ── Education ── */
+    .education { background: var(--bg-deep); }
+
+    /* ── Contact ── */
+    .contact { background: var(--bg-primary); }
+    .contact-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem; margin-top: 2rem;
+    }
+    .contact-card {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1.25rem;
+      text-decoration: none; color: inherit;
+      transition: border-color 0.2s, transform 0.2s;
+      display: flex; flex-direction: column; gap: 0.5rem;
+    }
+    a.contact-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+    .contact-card .cc-icon {
+      width: 40px; height: 40px; border-radius: 10px;
+      background: var(--accent-dim);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .contact-card .cc-icon svg { width: 20px; height: 20px; stroke: var(--accent); fill: none; }
+    .contact-card .cc-label { font-size: 0.75rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.05em; }
+    .contact-card .cc-value { font-size: 0.9rem; font-weight: 500; word-break: break-word; }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center; padding: 2rem;
+      border-top: 1px solid var(--border);
+      color: var(--text-secondary); font-size: 0.8rem;
+      background: var(--bg-deep);
+    }
+
+    /* ── Lang toggle ── */
+    [data-lang-en] { display: inline; }
+    [data-lang-ru] { display: none; }
+    html[lang="ru"] [data-lang-en] { display: none; }
+    html[lang="ru"] [data-lang-ru] { display: inline; }
+    /* block-level lang elements */
+    div[data-lang-en], p[data-lang-en], li[data-lang-en], h1[data-lang-en],
+    h2[data-lang-en], h3[data-lang-en], span[data-lang-en], a[data-lang-en] { display: inline; }
+    div[data-lang-ru], p[data-lang-ru], li[data-lang-ru], h1[data-lang-ru],
+    h2[data-lang-ru], h3[data-lang-ru], span[data-lang-ru], a[data-lang-ru] { display: none; }
+    html[lang="ru"] div[data-lang-en], html[lang="ru"] p[data-lang-en],
+    html[lang="ru"] li[data-lang-en], html[lang="ru"] h1[data-lang-en],
+    html[lang="ru"] h2[data-lang-en], html[lang="ru"] h3[data-lang-en],
+    html[lang="ru"] span[data-lang-en], html[lang="ru"] a[data-lang-en] { display: none; }
+    html[lang="ru"] div[data-lang-ru], html[lang="ru"] p[data-lang-ru],
+    html[lang="ru"] li[data-lang-ru], html[lang="ru"] h1[data-lang-ru],
+    html[lang="ru"] h2[data-lang-ru], html[lang="ru"] h3[data-lang-ru],
+    html[lang="ru"] span[data-lang-ru], html[lang="ru"] a[data-lang-ru] { display: inline; }
+    /* flex items need display:flex when visible */
+    .yt-card[data-lang-en], .yt-card[data-lang-ru] { display: none; }
+    html:not([lang="ru"]) .yt-card[data-lang-en] { display: flex; }
+    html[lang="ru"] .yt-card[data-lang-ru] { display: flex; }
+
+    /* ── Responsive ── */
+    @media (max-width: 768px) {
+      section { padding: 4rem 1.25rem; }
+      .section-title { font-size: 1.5rem; }
+      .about-grid { grid-template-columns: 1fr 1fr; gap: 1rem; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .yt-card { flex-direction: column; text-align: center; }
+      .nav-links { display: none; }
+      .nav-links.open {
+        display: flex; flex-direction: column;
+        position: absolute; top: var(--nav-height); left: 0; right: 0;
+        background: rgba(7, 13, 26, 0.95); backdrop-filter: blur(14px);
+        padding: 1.5rem 2rem; gap: 1.25rem;
+        border-bottom: 1px solid var(--border);
+      }
+      .nav-hamburger { display: block; }
+    }
+    @media (max-width: 480px) {
+      .about-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════ NAVIGATION ═══════════ -->
+<nav>
+  <a href="#" class="nav-logo">tymur.org</a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#about"><span data-lang-en>About</span><span data-lang-ru>Обо мне</span></a></li>
+    <li><a href="#youtube">YouTube</a></li>
+    <li><a href="#brokerage"><span data-lang-en>Brokerage</span><span data-lang-ru>Фрахт</span></a></li>
+    <li><a href="#education"><span data-lang-en>Education</span><span data-lang-ru>Обучение</span></a></li>
+    <li><a href="#contact"><span data-lang-en>Contact</span><span data-lang-ru>Контакты</span></a></li>
+    <li><button class="lang-btn" id="langToggle">RU</button></li>
+  </ul>
+  <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- ═══════════ HERO ═══════════ -->
+<section class="hero" id="hero">
+  <div class="container">
+    <h1>
+      <span data-lang-en>Captain Tymur Rudov</span>
+      <span data-lang-ru>Капитан Тимур Рудов</span>
+    </h1>
+    <p class="subtitle">
+      <span data-lang-en>Master Mariner. Freight Broker. Storyteller.</span>
+      <span data-lang-ru>Капитан дальнего плавания. Фрахтовый брокер. Рассказчик.</span>
+    </p>
+    <a href="#contact" class="hero-cta">
+      <span data-lang-en>Get in Touch</span>
+      <span data-lang-ru>Связаться</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+    </a>
+  </div>
+</section>
+
+<!-- ═══════════ ABOUT ═══════════ -->
+<section class="about" id="about">
+  <div class="container">
+    <span class="section-label">
+      <span data-lang-en>About</span><span data-lang-ru>Обо мне</span>
+    </span>
+    <h2 class="section-title">
+      <span data-lang-en>From Open Sea to Global Shipping</span>
+      <span data-lang-ru>От открытого моря к мировому шиппингу</span>
+    </h2>
+    <p class="section-text" data-lang-en>
+      At sea since 2003 — from ordinary seaman to Master Mariner (STCW II/2, unlimited).
+      Years of commanding dry cargo vessels across the Black Sea, Mediterranean, and beyond
+      built a deep understanding of how ships, ports, and cargo actually work.
+      Today that operational experience powers everything I do: freight brokerage,
+      maritime education, and a YouTube channel that brings the real side of shipping
+      to nearly 200 000 subscribers.
+    </p>
+    <p class="section-text" data-lang-ru>
+      В море с 2003 года — от матроса до капитана дальнего плавания (диплом STCW II/2, без ограничений).
+      Годы командования сухогрузами в Чёрном море, Средиземноморье и далее
+      дали глубокое понимание того, как работают суда, порты и грузы на практике.
+      Сегодня этот операционный опыт стоит за всем, чем я занимаюсь: фрахтовый брокеридж,
+      морское образование и YouTube-канал, который показывает реальную сторону шиппинга
+      почти 200 000 подписчикам.
+    </p>
+    <div class="about-grid">
+      <div class="stat-card">
+        <div class="stat-number">20+</div>
+        <div class="stat-label"><span data-lang-en>years in maritime industry</span><span data-lang-ru>лет в морской индустрии</span></div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number" data-lang-en>Master</div>
+        <div class="stat-number" data-lang-ru>Капитан</div>
+        <div class="stat-label"><span data-lang-en>Mariner certificate (unlimited)</span><span data-lang-ru>дальнего плавания (без ограничений)</span></div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">191K</div>
+        <div class="stat-label"><span data-lang-en>YouTube subscribers</span><span data-lang-ru>подписчиков на YouTube</span></div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">5</div>
+        <div class="stat-label"><span data-lang-en>sea & trade regions covered</span><span data-lang-ru>морских и торговых регионов</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ YOUTUBE ═══════════ -->
+<section class="youtube" id="youtube">
+  <div class="container">
+    <span class="section-label">YouTube</span>
+    <h2 class="section-title">
+      <span data-lang-en>Captain Tymur — The Channel</span>
+      <span data-lang-ru>Капитан Тимур — Канал</span>
+    </h2>
+    <p class="section-text" data-lang-en>
+      Maritime practice, podcasts, casualty analysis, and behind-the-scenes
+      of the shipping world — all in one place.
+    </p>
+    <p class="section-text" data-lang-ru>
+      Морская практика, подкасты, разбор аварий и закулисье
+      мира шиппинга — всё в одном месте.
+    </p>
+    <div class="yt-card" data-lang-en>
+      <div class="yt-icon">
+        <svg viewBox="0 0 24 24"><path d="M23.498 6.186a2.994 2.994 0 0 0-2.107-2.117C19.545 3.5 12 3.5 12 3.5s-7.545 0-9.391.569A2.994 2.994 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a2.994 2.994 0 0 0 2.107 2.117C4.455 20.5 12 20.5 12 20.5s7.545 0 9.391-.569a2.994 2.994 0 0 0 2.107-2.117C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+      </div>
+      <div class="yt-info">
+        <h3>Captain Tymur</h3>
+        <div class="yt-subs">191K subscribers</div>
+        <p>Real maritime stories, port operations, vessel inspections, freight market insights, and casualty investigations explained by a working captain.</p>
+        <a href="https://www.youtube.com/@CaptainTymur" target="_blank" rel="noopener" class="yt-link">
+          Watch on YouTube
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="yt-card" data-lang-ru>
+      <div class="yt-icon">
+        <svg viewBox="0 0 24 24"><path d="M23.498 6.186a2.994 2.994 0 0 0-2.107-2.117C19.545 3.5 12 3.5 12 3.5s-7.545 0-9.391.569A2.994 2.994 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a2.994 2.994 0 0 0 2.107 2.117C4.455 20.5 12 20.5 12 20.5s7.545 0 9.391-.569a2.994 2.994 0 0 0 2.107-2.117C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+      </div>
+      <div class="yt-info">
+        <h3>Капитан Тимур</h3>
+        <div class="yt-subs">191K подписчиков</div>
+        <p>Реальные морские истории, портовые операции, инспекции судов, аналитика фрахтового рынка и разборы аварий от действующего капитана.</p>
+        <a href="https://www.youtube.com/@CaptainTymur" target="_blank" rel="noopener" class="yt-link">
+          Смотреть на YouTube
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ BROKERAGE ═══════════ -->
+<section class="brokerage" id="brokerage">
+  <div class="container">
+    <span class="section-label">
+      <span data-lang-en>Freight Brokerage</span><span data-lang-ru>Фрахтовый брокеридж</span>
+    </span>
+    <h2 class="section-title">
+      <span data-lang-en>Independent Freight Broker</span>
+      <span data-lang-ru>Независимый фрахтовый брокер</span>
+    </h2>
+    <p class="section-text" data-lang-en>
+      Connecting charterers and shipowners across key trade routes.
+      Hands-on operational background means faster fixture negotiations
+      and fewer surprises at the berth.
+    </p>
+    <p class="section-text" data-lang-ru>
+      Связываю фрахтователей и судовладельцев на ключевых торговых маршрутах.
+      Практический операционный опыт означает более быстрые переговоры по фиксчерам
+      и меньше сюрпризов у причала.
+    </p>
+    <div class="region-tags">
+      <span class="region-tag">Black Sea</span>
+      <span class="region-tag">Mediterranean</span>
+      <span class="region-tag">Baltic</span>
+      <span class="region-tag">Continent</span>
+      <span class="region-tag">Caspian</span>
+    </div>
+    <a href="https://capt-tymur.com" target="_blank" rel="noopener" class="broker-link">
+      <span data-lang-en>Visit capt-tymur.com</span>
+      <span data-lang-ru>Перейти на capt-tymur.com</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+    </a>
+  </div>
+</section>
+
+<!-- ═══════════ EDUCATION ═══════════ -->
+<section class="education" id="education">
+  <div class="container">
+    <span class="section-label">
+      <span data-lang-en>Maritime Education</span><span data-lang-ru>Морское образование</span>
+    </span>
+    <h2 class="section-title">
+      <span data-lang-en>Navigation Classes & Officer Courses</span>
+      <span data-lang-ru>Мореходные классы и курсы для офицеров</span>
+    </h2>
+    <p class="section-text" data-lang-en>
+      Practical training programs for deck officers — from cadets preparing for their
+      first watch to experienced mates aiming for Master.
+      Courses draw on real-world command experience and are designed
+      for the international maritime job market.
+    </p>
+    <p class="section-text" data-lang-ru>
+      Практические программы подготовки для палубных офицеров — от курсантов,
+      готовящихся к первой вахте, до опытных помощников, стремящихся к диплому капитана.
+      Курсы основаны на реальном командном опыте и рассчитаны
+      на международный морской рынок труда.
+    </p>
+  </div>
+</section>
+
+<!-- ═══════════ CONTACT ═══════════ -->
+<section class="contact" id="contact">
+  <div class="container">
+    <span class="section-label">
+      <span data-lang-en>Contact</span><span data-lang-ru>Контакты</span>
+    </span>
+    <h2 class="section-title">
+      <span data-lang-en>Let's Connect</span>
+      <span data-lang-ru>Свяжитесь со мной</span>
+    </h2>
+    <div class="contact-grid">
+
+      <!-- Email -->
+      <a href="mailto:broker@capt-tymur.com" class="contact-card">
+        <div class="cc-icon">
+          <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+        </div>
+        <div class="cc-label">Email</div>
+        <div class="cc-value">broker@capt-tymur.com</div>
+      </a>
+
+      <!-- WhatsApp -->
+      <a href="https://wa.me/35797617412" target="_blank" rel="noopener" class="contact-card">
+        <div class="cc-icon">
+          <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        </div>
+        <div class="cc-label">WhatsApp</div>
+        <div class="cc-value">+357 97 617 412</div>
+      </a>
+
+      <!-- Location -->
+      <div class="contact-card">
+        <div class="cc-icon">
+          <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <div class="cc-label"><span data-lang-en>Location</span><span data-lang-ru>Местоположение</span></div>
+        <div class="cc-value"><span data-lang-en>Tbilisi, Georgia</span><span data-lang-ru>Тбилиси, Грузия</span></div>
+      </div>
+
+      <!-- LinkedIn -->
+      <a href="https://www.linkedin.com/in/tymur-rudov/" target="_blank" rel="noopener" class="contact-card">
+        <div class="cc-icon">
+          <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </div>
+        <div class="cc-label">LinkedIn</div>
+        <div class="cc-value">Tymur Rudov</div>
+      </a>
+
+      <!-- YouTube -->
+      <a href="https://www.youtube.com/@CaptainTymur" target="_blank" rel="noopener" class="contact-card">
+        <div class="cc-icon">
+          <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19.13C5.12 19.56 12 19.56 12 19.56s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg>
+        </div>
+        <div class="cc-label">YouTube</div>
+        <div class="cc-value">Captain Tymur</div>
+      </a>
+
+      <!-- Telegram -->
+      <a href="https://t.me/CaptainTymur" target="_blank" rel="noopener" class="contact-card">
+        <div class="cc-icon">
+          <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4z"/><path d="M22 2 11 13"/></svg>
+        </div>
+        <div class="cc-label">Telegram</div>
+        <div class="cc-value">@CaptainTymur</div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<footer>
+  <span data-lang-en>&copy; 2025 Tymur Rudov. All rights reserved.</span>
+  <span data-lang-ru>&copy; 2025 Тимур Рудов. Все права защищены.</span>
+</footer>
+
+<!-- ═══════════ JAVASCRIPT ═══════════ -->
+<script>
+(function () {
+  const html = document.documentElement;
+
+  /* ── Language toggle ── */
+  const langBtn = document.getElementById('langToggle');
+
+  function setLang(lang) {
+    html.lang = lang;
+    langBtn.textContent = lang === 'en' ? 'RU' : 'EN';
+    localStorage.setItem('lang', lang);
+  }
+
+  // Determine initial language
+  const stored = localStorage.getItem('lang');
+  if (stored) {
+    setLang(stored);
+  } else {
+    const browserLang = (navigator.language || '').toLowerCase();
+    setLang(browserLang.startsWith('ru') ? 'ru' : 'en');
+  }
+
+  langBtn.addEventListener('click', function () {
+    setLang(html.lang === 'en' ? 'ru' : 'en');
+  });
+
+  /* ── Mobile menu ── */
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('navLinks');
+
+  hamburger.addEventListener('click', function () {
+    navLinks.classList.toggle('open');
+  });
+
+  // Close menu on link click
+  navLinks.querySelectorAll('a').forEach(function (link) {
+    link.addEventListener('click', function () {
+      navLinks.classList.remove('open');
+    });
+  });
+
+  /* ── Smooth-scroll offset for fixed nav ── */
+  document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+    anchor.addEventListener('click', function (e) {
+      const id = this.getAttribute('href');
+      if (id === '#') return;
+      const target = document.querySelector(id);
+      if (!target) return;
+      e.preventDefault();
+      const top = target.getBoundingClientRect().top + window.pageYOffset - 72;
+      window.scrollTo({ top: top, behavior: 'smooth' });
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
