@@ -325,6 +325,9 @@
         <p>
             Формат — неформальная встреча с возможностью задать вопросы, обменяться опытом и контактами.
         </p>
+        <p style="color: #f59e0b; margin-top: 8px;">
+            Точное время и место встречи я пришлю вам на email, который вы укажете в форме регистрации.
+        </p>
 
         <div class="details-grid">
             <span class="label">Дата:</span>
@@ -369,9 +372,8 @@
             </div>
 
             <div class="form-group">
-                <label for="contact">Email или телефон *</label>
-                <input type="text" id="contact" name="Контакт" required placeholder="email@example.com или +373 xxxxxxx">
-                <small>Для связи и отправки точного адреса встречи</small>
+                <label for="contact">Email *</label>
+                <input type="email" id="contact" name="Email" required placeholder="email@example.com">
             </div>
 
             <div class="form-group">
@@ -386,7 +388,7 @@
 
             <div class="form-group">
                 <label for="comment">Комментарий (необязательно)</label>
-                <textarea id="comment" name="Комментарий" placeholder="Вопрос, пожелание, или откуда вы узнали обо мне"></textarea>
+                <textarea id="comment" name="Комментарий"></textarea>
             </div>
 
             <div class="form-group">
