@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Встреча с подписчиками — Кишинёв, 9 марта 2026</title>
+    <meta name="description" content="Капитан Тимур Рудов приглашает подписчиков на живую встречу в Кишинёве 9 марта 2026">
+    <meta property="og:title" content="Встреча с подписчиками — Кишинёв">
+    <meta property="og:description" content="Капитан Тимур Рудов приглашает на живую встречу. 9 марта 2026, Кишинёв, Молдова.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tymur.org/meetup">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #070d1a;
+            color: #e4eaf4;
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #0b1628 0%, #132240 50%, #1a2d4a 100%);
+            padding: 60px 20px 45px;
+            text-align: center;
+            border-bottom: 2px solid #1a2d4a;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at 30% 70%, rgba(14,165,233,0.05) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero .anchor {
+            font-size: 2.5em;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .hero h1 {
+            font-size: 2.2em;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 8px;
+        }
+
+        .hero .subtitle {
+            font-size: 1.15em;
+            color: #8899b0;
+            margin-bottom: 22px;
+        }
+
+        .hero .date-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #0ea5e9, #06b6d4);
+            color: #fff;
+            padding: 11px 32px;
+            border-radius: 30px;
+            font-size: 1.05em;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+        }
+
+        .container {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 36px 20px;
+        }
+
+        .info-card {
+            background: #0f1d32;
+            border: 1px solid #1a2d4a;
+            border-radius: 12px;
+            padding: 28px;
+            margin-bottom: 28px;
+        }
+
+        .info-card h2 {
+            color: #0ea5e9;
+            font-size: 1.25em;
+            margin-bottom: 14px;
+            font-weight: 600;
+        }
+
+        .info-card p {
+            color: #8899b0;
+            margin-bottom: 10px;
+            line-height: 1.7;
+        }
+
+        .details-grid {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 10px 18px;
+            margin-top: 16px;
+        }
+
+        .details-grid .label {
+            color: #0ea5e9;
+            font-weight: 600;
+            font-size: 0.95em;
+        }
+
+        .details-grid .value {
+            color: #e4eaf4;
+        }
+
+        .form-card {
+            background: #0f1d32;
+            border: 1px solid #1a2d4a;
+            border-radius: 12px;
+            padding: 28px;
+        }
+
+        .form-card h2 {
+            color: #0ea5e9;
+            font-size: 1.25em;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+            color: #0ea5e9;
+            font-weight: 600;
+            margin-bottom: 6px;
+            font-size: 0.92em;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px 15px;
+            background: #070d1a;
+            border: 1px solid #1a2d4a;
+            border-radius: 8px;
+            color: #e4eaf4;
+            font-size: 1em;
+            font-family: inherit;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #0ea5e9;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 75px;
+        }
+
+        .form-group small {
+            display: block;
+            color: #5a6b82;
+            margin-top: 4px;
+            font-size: 0.85em;
+        }
+
+        .form-group select option {
+            background: #0b1628;
+            color: #e4eaf4;
+        }
+
+        .captcha-box {
+            background: #070d1a;
+            border: 1px solid #1a2d4a;
+            border-radius: 8px;
+            padding: 14px 16px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        .captcha-box .question {
+            color: #f59e0b;
+            font-weight: 600;
+            font-size: 1.05em;
+            white-space: nowrap;
+        }
+
+        .captcha-box input {
+            width: 75px;
+            text-align: center;
+            font-size: 1.15em;
+            padding: 8px;
+            background: #0f1d32;
+            border: 1px solid #1a2d4a;
+            border-radius: 6px;
+            color: #e4eaf4;
+        }
+
+        .captcha-box input:focus {
+            outline: none;
+            border-color: #0ea5e9;
+        }
+
+        .captcha-box .hint {
+            color: #5a6b82;
+            font-size: 0.82em;
+            width: 100%;
+        }
+
+        .submit-btn {
+            display: block;
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, #0ea5e9, #06b6d4);
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.08em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: opacity 0.3s;
+            margin-top: 8px;
+            font-family: inherit;
+        }
+
+        .submit-btn:hover { opacity: 0.9; }
+        .submit-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+        .error-msg {
+            background: rgba(239, 68, 68, 0.15);
+            border: 1px solid #dc2626;
+            color: #fca5a5;
+            padding: 11px 15px;
+            border-radius: 8px;
+            margin-bottom: 18px;
+            display: none;
+            font-size: 0.95em;
+        }
+
+        .success-card {
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid #059669;
+            color: #a7f3d0;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            display: none;
+        }
+
+        .success-card h2 {
+            color: #34d399;
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+
+        .success-card p { line-height: 1.7; }
+
+        .footer {
+            text-align: center;
+            padding: 30px 20px;
+            color: #3a4a60;
+            font-size: 0.88em;
+        }
+
+        .footer a {
+            color: #0ea5e9;
+            text-decoration: none;
+        }
+
+        .footer a:hover { text-decoration: underline; }
+
+        .back-link {
+            display: inline-block;
+            color: #0ea5e9;
+            text-decoration: none;
+            font-size: 0.9em;
+            margin-bottom: 20px;
+        }
+
+        .back-link:hover { text-decoration: underline; }
+
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 1.6em; }
+            .hero .subtitle { font-size: 1em; }
+            .container { padding: 20px 15px; }
+            .info-card, .form-card { padding: 20px; }
+            .details-grid { grid-template-columns: 1fr; gap: 4px; }
+            .details-grid .label { margin-top: 8px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="hero">
+    <span class="anchor">&#9875;</span>
+    <h1>Встреча с подписчиками</h1>
+    <p class="subtitle">Капитан Тимур Рудов приглашает на живую встречу</p>
+    <div class="date-badge">Кишинёв &middot; 9 марта 2026</div>
+</div>
+
+<div class="container">
+
+    <a href="/" class="back-link">&larr; tymur.org</a>
+
+    <div class="info-card">
+        <h2>О встрече</h2>
+        <p>
+            Приглашаю подписчиков на живую встречу в Кишинёве! Это возможность пообщаться лично,
+            обсудить морскую индустрию, судоходный бизнес, и просто провести время в хорошей компании.
+        </p>
+        <p>
+            Формат — неформальная встреча с возможностью задать вопросы, обменяться опытом и контактами.
+        </p>
+
+        <div class="details-grid">
+            <span class="label">Дата:</span>
+            <span class="value">9 марта 2026 (понедельник)</span>
+
+            <span class="label">Время:</span>
+            <span class="value">18:00 — 21:00 (возможны изменения)</span>
+
+            <span class="label">Место:</span>
+            <span class="value">Кишинёв, Молдова (точный адрес — после регистрации)</span>
+
+            <span class="label">Стоимость:</span>
+            <span class="value">Бесплатно</span>
+        </div>
+    </div>
+
+    <div class="success-card" id="successCard">
+        <h2>Вы зарегистрированы!</h2>
+        <p>
+            Спасибо за регистрацию. Я свяжусь с вами ближе к дате встречи
+            и сообщу точный адрес площадки.
+        </p>
+        <p style="margin-top: 15px; color: #6ee7b7;">До встречи в Кишинёве!</p>
+    </div>
+
+    <div class="form-card" id="formCard">
+        <h2>Регистрация</h2>
+
+        <div class="error-msg" id="errorMsg"></div>
+
+        <form id="regForm" action="https://formsubmit.co/broker@capt-tymur.com" method="POST">
+            <!-- FormSubmit config -->
+            <input type="hidden" name="_subject" value="Регистрация на встречу в Кишинёве">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" value="https://tymur.org/meetup.html?success=1">
+            <input type="hidden" name="_template" value="table">
+            <input type="text" name="_honey" style="display:none">
+
+            <div class="form-group">
+                <label for="name">Имя и фамилия *</label>
+                <input type="text" id="name" name="Имя" required placeholder="Иван Петров">
+            </div>
+
+            <div class="form-group">
+                <label for="contact">Email или телефон *</label>
+                <input type="text" id="contact" name="Контакт" required placeholder="email@example.com или +373 xxxxxxx">
+                <small>Для связи и отправки точного адреса встречи</small>
+            </div>
+
+            <div class="form-group">
+                <label for="guests">Сколько человек придёт (включая вас)</label>
+                <select id="guests" name="Гостей">
+                    <option value="1">1 — только я</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4+">4+</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="comment">Комментарий (необязательно)</label>
+                <textarea id="comment" name="Комментарий" placeholder="Вопрос, пожелание, или откуда вы узнали обо мне"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>Проверка (антиспам)</label>
+                <div class="captcha-box">
+                    <span class="question" id="captchaQuestion"></span>
+                    <input type="number" id="captchaAnswer" required placeholder="?">
+                    <span class="hint">Простая проверка, что вы не робот</span>
+                </div>
+            </div>
+
+            <button type="submit" class="submit-btn" id="submitBtn">Зарегистрироваться</button>
+        </form>
+    </div>
+
+</div>
+
+<div class="footer">
+    <p>Капитан Тимур Рудов &middot; <a href="https://tymur.org">tymur.org</a> &middot; <a href="mailto:broker@capt-tymur.com">broker@capt-tymur.com</a></p>
+</div>
+
+<script>
+    // Captcha
+    let captchaA, captchaB;
+
+    function generateCaptcha() {
+        captchaA = Math.floor(Math.random() * 9) + 1;
+        captchaB = Math.floor(Math.random() * 9) + 1;
+        document.getElementById('captchaQuestion').textContent =
+            'Сколько будет ' + captchaA + ' + ' + captchaB + ' = ?';
+    }
+
+    generateCaptcha();
+
+    // Check if returning from successful submission
+    if (window.location.search.includes('success=1')) {
+        document.getElementById('formCard').style.display = 'none';
+        document.getElementById('successCard').style.display = 'block';
+    }
+
+    // Form validation
+    document.getElementById('regForm').addEventListener('submit', function(e) {
+        const answer = parseInt(document.getElementById('captchaAnswer').value);
+        const errorMsg = document.getElementById('errorMsg');
+
+        if (answer !== captchaA + captchaB) {
+            e.preventDefault();
+            errorMsg.textContent = 'Неверный ответ на проверочный вопрос. Попробуйте ещё раз.';
+            errorMsg.style.display = 'block';
+            generateCaptcha();
+            document.getElementById('captchaAnswer').value = '';
+            return;
+        }
+
+        errorMsg.style.display = 'none';
+        document.getElementById('submitBtn').disabled = true;
+        document.getElementById('submitBtn').textContent = 'Отправка...';
+    });
+</script>
+
+</body>
+</html>
