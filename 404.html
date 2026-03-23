@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Not Found | tymur.org</title>
+  <meta name="robots" content="noindex,follow">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --bg: #070d1a;
+      --card: #132240;
+      --text: #e4eaf4;
+      --muted: #8899b0;
+      --accent: #0ea5e9;
+      --border: #1a2d4a;
+    }
+    body {
+      font-family: 'Arial Black', 'Arial Bold', Gadget, sans-serif;
+      min-height: 100vh; display: flex; align-items: center; justify-content: center;
+      background: radial-gradient(circle at top, rgba(14,165,233,0.12), transparent 35%), var(--bg);
+      color: var(--text); padding: 1.5rem;
+    }
+    .card {
+      max-width: 760px; width: 100%; background: var(--card);
+      border: 1px solid var(--border); border-radius: 16px; padding: 2rem;
+    }
+    h1 { font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 1rem; line-height: 1.1; }
+    p { color: var(--muted); line-height: 1.7; margin-bottom: 1rem; }
+    .links { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.25rem; }
+    .links a {
+      display: inline-flex; align-items: center; justify-content: center;
+      padding: 0.8rem 1rem; border: 1px solid var(--border); border-radius: 10px;
+      color: var(--text); text-decoration: none; font-size: 0.95rem;
+    }
+    .links a.primary { background: var(--accent); color: #070d1a; border-color: transparent; }
+    [data-lang-ru] { display: none; }
+    html[lang="ru"] [data-lang-en] { display: none; }
+    html[lang="ru"] [data-lang-ru] { display: initial; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>
+      <span data-lang-en>That page is no longer here.</span>
+      <span data-lang-ru>Этой страницы больше нет.</span>
+    </h1>
+    <p data-lang-en>
+      The old version of `tymur.org` included legacy blog and WordPress pages. Some of those URLs are now retired while the site is being rebuilt as a focused professional hub.
+    </p>
+    <p data-lang-ru>
+      В старой версии `tymur.org` были legacy-страницы блога и WordPress. Часть этих URL уже выведена из обращения, потому что сайт собирается заново как сфокусированный профессиональный хаб.
+    </p>
+    <p data-lang-en>
+      The best next step is to use one of the current entry points below.
+    </p>
+    <p data-lang-ru>
+      Лучший следующий шаг — перейти в один из актуальных разделов ниже.
+    </p>
+    <div class="links">
+      <a class="primary" href="/"><span data-lang-en>Home</span><span data-lang-ru>Главная</span></a>
+      <a href="/professional-background/"><span data-lang-en>Professional Background</span><span data-lang-ru>Профессиональный профиль</span></a>
+      <a href="/work-with-me/"><span data-lang-en>Work With Me</span><span data-lang-ru>Как со мной работать</span></a>
+      <a href="https://academy.capt-tymur.com"><span data-lang-en>Maritime Academy</span><span data-lang-ru>Морская академия</span></a>
+      <a href="https://www.youtube.com/@CaptainTymur">YouTube</a>
+    </div>
+  </div>
+  <script>
+  (function () {
+    const browserLang = (navigator.language || '').toLowerCase();
+    document.documentElement.lang = browserLang.startsWith('ru') ? 'ru' : 'en';
+  })();
+  </script>
+</body>
+</html>
