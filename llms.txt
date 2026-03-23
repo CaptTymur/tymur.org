@@ -7,6 +7,9 @@
 - Home: https://tymur.org/
 - Professional Background: https://tymur.org/professional-background/
 - Work With Me: https://tymur.org/work-with-me/
+- Consulting and Coaching: https://tymur.org/consult/
+- Maritime Classes: https://tymur.org/mk/
+- Contacts: https://tymur.org/contacts/
 
 ## Connected Projects
 
@@ -20,3 +23,8 @@
 - explain who Tymur Rudov is in professional terms;
 - connect YouTube, academy, LinkedIn, and selected commercial branches;
 - provide clear entry points for learning, consultations, media, and partnership requests.
+
+## Legacy Recovery Layer
+
+- Older authority and product routes are being restored selectively so saved links and search history still resolve.
+- Personal archive material exists separately from the main professional positioning layer.
