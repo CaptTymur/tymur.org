@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cargo Hold Preparation for Grain Standard | White Paper | Tymur Rudov</title>
+  <meta name="description" content="White paper by Tymur Rudov on cargo hold preparation for grain standard: what surveyors actually check, why merchant crews fail, and how chief mates should manage cleaning, bilges, hatch covers, drying, reporting, and commercial pressure.">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://tymur.org/cargo-hold-preparation-grain-standard/">
+  <meta property="og:title" content="Cargo Hold Preparation for Grain Standard | White Paper">
+  <meta property="og:description" content="A practical white paper on cargo hold preparation for merchant crews: cleaning standard, survey logic, bilges, hatch covers, drying, reporting, and real operational limits.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://tymur.org/cargo-hold-preparation-grain-standard/">
+  <meta property="og:site_name" content="tymur.org">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Cargo Hold Preparation for Grain Standard | White Paper">
+  <meta name="twitter:description" content="Practical maritime white paper for chief mates, masters, and deck crews preparing holds for grain standard.">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Cargo Hold Preparation for Grain Standard",
+      "author": {
+        "@type": "Person",
+        "name": "Tymur Rudov"
+      },
+      "publisher": {
+        "@type": "Person",
+        "name": "Tymur Rudov"
+      },
+      "datePublished": "2026-03-28",
+      "dateModified": "2026-03-28",
+      "inLanguage": ["en", "ru"],
+      "url": "https://tymur.org/cargo-hold-preparation-grain-standard/",
+      "about": [
+        "Cargo hold preparation",
+        "Grain standard",
+        "Chief mate",
+        "Bulk carrier operations",
+        "Merchant ship crews"
+      ]
+    }
+  </script>
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #070d1a;
+      --bg-alt: #0b1628;
+      --card: #111d36;
+      --card-soft: #152544;
+      --text: #e4eaf4;
+      --muted: #92a0b6;
+      --accent: #0ea5e9;
+      --accent-soft: rgba(14, 165, 233, 0.12);
+      --border: #1a2d4a;
+      --good: #84cc16;
+      --warn: #f59e0b;
+      --danger: #f97316;
+      --radius: 16px;
+    }
+
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      background:
+        radial-gradient(ellipse 55% 35% at 50% 0%, rgba(14, 165, 233, 0.14), transparent),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.78;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: var(--accent); }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1rem 1.5rem;
+      background: rgba(7, 13, 26, 0.9);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-logo,
+    .nav-links a {
+      font-family: Arial, sans-serif;
+      text-decoration: none;
+    }
+
+    .nav-logo {
+      color: var(--text);
+      font-weight: 700;
+      font-size: 1.05rem;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      list-style: none;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .nav-links a:hover { color: var(--accent); }
+
+    .lang-btn {
+      background: var(--accent-soft);
+      border: 1px solid var(--border);
+      color: var(--accent);
+      padding: 0.35rem 0.75rem;
+      border-radius: 8px;
+      cursor: pointer;
+      font-family: Arial, sans-serif;
+      font-size: 0.82rem;
+      font-weight: 700;
+    }
+
+    .wrap {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 1.4rem;
+    }
+
+    header {
+      padding: 4.5rem 0 2.2rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 1rem;
+      color: var(--accent);
+      text-decoration: none;
+      font-family: Arial, sans-serif;
+      font-size: 0.92rem;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 1rem;
+      padding: 0.35rem 0.8rem;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-family: Arial, sans-serif;
+      font-size: 0.76rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      font-size: clamp(2.3rem, 5vw, 4.2rem);
+      line-height: 1.06;
+      margin-bottom: 1rem;
+      max-width: 980px;
+    }
+
+    .lead {
+      max-width: 920px;
+      color: var(--muted);
+      font-size: 1.08rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .meta {
+      font-family: Arial, sans-serif;
+      color: var(--muted);
+      font-size: 0.92rem;
+      margin-bottom: 1.4rem;
+    }
+
+    .cta-row {
+      display: flex;
+      gap: 0.9rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.88rem 1.25rem;
+      border-radius: 10px;
+      text-decoration: none;
+      font-family: Arial, sans-serif;
+      font-weight: 700;
+      font-size: 0.92rem;
+      border: 1px solid var(--border);
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #04101d;
+      border-color: transparent;
+    }
+
+    .btn-secondary {
+      color: var(--text);
+      background: transparent;
+    }
+
+    .hero-note {
+      margin-top: 1.35rem;
+      padding: 1rem 1.15rem;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.03);
+      font-family: Arial, sans-serif;
+      font-size: 0.93rem;
+      color: var(--muted);
+      max-width: 980px;
+    }
+
+    main { padding: 2rem 0 5rem; }
+
+    article {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 320px;
+      gap: 1.4rem;
+      align-items: start;
+    }
+
+    .main-col { min-width: 0; }
+    .side-col {
+      position: sticky;
+      top: 86px;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.45rem;
+      margin-bottom: 1.25rem;
+      overflow: hidden;
+    }
+
+    .card h2 {
+      font-family: Arial, sans-serif;
+      font-size: 1.32rem;
+      line-height: 1.25;
+      margin-bottom: 0.8rem;
+    }
+
+    .card h3 {
+      font-family: Arial, sans-serif;
+      font-size: 1.02rem;
+      margin: 1rem 0 0.55rem;
+    }
+
+    .card p { color: var(--text); margin-bottom: 1rem; }
+    .card p:last-child { margin-bottom: 0; }
+
+    .muted { color: var(--muted); }
+
+    ul, ol {
+      padding-left: 1.2rem;
+      margin-bottom: 1rem;
+    }
+
+    li { margin-bottom: 0.5rem; color: var(--text); }
+
+    .quick-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.9rem;
+      margin-top: 1rem;
+    }
+
+    .quick-box {
+      background: var(--card-soft);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1rem;
+    }
+
+    .quick-box strong {
+      display: block;
+      margin-bottom: 0.4rem;
+      font-family: Arial, sans-serif;
+      color: var(--accent);
+      font-size: 0.9rem;
+    }
+
+    .process {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.9rem;
+      margin-top: 1rem;
+    }
+
+    .process-step {
+      background: linear-gradient(180deg, rgba(14,165,233,0.08), rgba(255,255,255,0.02));
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1rem;
+      min-height: 162px;
+    }
+
+    .process-step .num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 34px;
+      height: 34px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-family: Arial, sans-serif;
+      font-weight: 700;
+      margin-bottom: 0.7rem;
+    }
+
+    .process-step h3 {
+      margin: 0 0 0.5rem 0;
+      font-size: 1rem;
+      font-family: Arial, sans-serif;
+    }
+
+    .logic-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+      font-size: 0.95rem;
+    }
+
+    .logic-table th,
+    .logic-table td {
+      border: 1px solid var(--border);
+      padding: 0.8rem 0.75rem;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .logic-table th {
+      font-family: Arial, sans-serif;
+      background: rgba(14,165,233,0.08);
+      color: var(--text);
+    }
+
+    .logic-table td { color: var(--text); background: rgba(255,255,255,0.02); }
+
+    .figure-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    figure.media {
+      margin: 0;
+      background: rgba(255,255,255,0.02);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+    }
+
+    figure.media img {
+      display: block;
+      width: 100%;
+      height: 230px;
+      object-fit: cover;
+      background: #0a1324;
+    }
+
+    figure.media figcaption {
+      padding: 0.9rem 1rem;
+      font-family: Arial, sans-serif;
+      font-size: 0.86rem;
+      color: var(--muted);
+    }
+
+    .signal-list {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.9rem;
+      margin-top: 1rem;
+    }
+
+    .signal {
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1rem;
+      background: rgba(255,255,255,0.02);
+    }
+
+    .signal.good { border-color: rgba(132,204,22,0.35); }
+    .signal.warn { border-color: rgba(245,158,11,0.35); }
+    .signal.danger { border-color: rgba(249,115,22,0.38); }
+
+    .signal-label {
+      font-family: Arial, sans-serif;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 0.45rem;
+    }
+
+    .signal.good .signal-label { color: var(--good); }
+    .signal.warn .signal-label { color: var(--warn); }
+    .signal.danger .signal-label { color: var(--danger); }
+
+    .sticky-card h2 {
+      font-size: 1.05rem;
+      margin-bottom: 0.7rem;
+    }
+
+    .sticky-card p,
+    .sticky-card li {
+      font-family: Arial, sans-serif;
+      font-size: 0.92rem;
+      line-height: 1.65;
+      color: var(--muted);
+    }
+
+    .sticky-card ul { margin-bottom: 0; }
+
+    .side-cta {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-top: 1rem;
+    }
+
+    .side-cta .btn { width: 100%; }
+
+    footer {
+      padding: 2rem;
+      text-align: center;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-family: Arial, sans-serif;
+      font-size: 0.82rem;
+      background: var(--bg);
+    }
+
+    [data-lang-ru] { display: none; }
+    html[lang="ru"] [data-lang-en] { display: none; }
+    html[lang="ru"] [data-lang-ru] { display: initial; }
+
+    @media (max-width: 980px) {
+      article { grid-template-columns: 1fr; }
+      .side-col { position: static; }
+      .process, .signal-list { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 760px) {
+      nav { padding: 1rem; flex-wrap: wrap; }
+      .wrap { padding: 0 1rem; }
+      .quick-grid, .process, .figure-grid, .signal-list { grid-template-columns: 1fr; }
+      .logic-table { display: block; overflow-x: auto; white-space: nowrap; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="/" class="nav-logo">tymur.org</a>
+    <ul class="nav-links">
+      <li><a href="/"><span data-lang-en>Home</span><span data-lang-ru>Главная</span></a></li>
+      <li><a href="/mk/"><span data-lang-en>Maritime Classes</span><span data-lang-ru>Мореходные классы</span></a></li>
+      <li><a href="https://academy.capt-tymur.com"><span data-lang-en>Academy</span><span data-lang-ru>Академия</span></a></li>
+      <li><button class="lang-btn" id="langToggle">RU</button></li>
+    </ul>
+  </nav>
+
+  <header>
+    <div class="wrap">
+      <a class="back-link" href="/mk/"><span data-lang-en>← Back to Maritime Classes</span><span data-lang-ru>← Назад к Мореходным классам</span></a>
+      <span class="eyebrow"><span data-lang-en>White Paper</span><span data-lang-ru>Белая страница</span></span>
+      <h1>
+        <span data-lang-en>Cargo Hold Preparation for Grain Standard</span>
+        <span data-lang-ru>Подготовка грузовых помещений под grain standard</span>
+      </h1>
+      <p class="lead" data-lang-en>
+        A practical white paper for chief mates, masters, and merchant ship crews. It explains what surveyors really check, why hold cleaning fails on ordinary dry cargo ships, and how to manage cleaning, bilges, hatch covers, drying, reporting, and commercial pressure as one operational system.
+      </p>
+      <p class="lead" data-lang-ru>
+        Практическая белая страница для старпомов, капитанов и экипажей гражданских сухогрузных судов. Она объясняет, что реально проверяет сюрвейер, почему подготовка трюмов проваливается на обычных судах, и как собирать cleaning, bilges, hatch covers, drying, reporting и коммерческое давление в одну управляемую систему.
+      </p>
+      <div class="meta">
+        <span data-lang-en>28 March 2026 · Tymur Rudov · Based on webinar, shipboard manual and illustrated handbook</span>
+        <span data-lang-ru>28 марта 2026 · Тимур Рудов · Основано на вебинаре, shipboard manual и расширенном handbook</span>
+      </div>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="https://academy.capt-tymur.com/cargo-officer-course.html" target="_blank" rel="noopener">
+          <span data-lang-en>Open Cargo Officer Course</span>
+          <span data-lang-ru>Открыть курс грузового офицера</span>
+        </a>
+        <a class="btn btn-secondary" href="./cargo-hold-preparation-handbook.pdf">
+          <span data-lang-en>Download Full PDF Handbook</span>
+          <span data-lang-ru>Скачать полный PDF-handbook</span>
+        </a>
+      </div>
+      <div class="hero-note">
+        <span data-lang-en>This page is not a “cleaning checklist only”. It is a decision page for the point where ordinary merchant crews meet real limits: too little time, too few people, imperfect coating, weak bilges, one HP machine, missing chemicals, and pressure to look ready before the system is actually ready.</span>
+        <span data-lang-ru>Эта страница не сводится к “чек-листу мойки”. Это decision page для той точки, где обычный гражданский экипаж сталкивается с реальными ограничениями: мало времени, мало людей, слабое покрытие, сомнительные bilges, одна HP machine, нехватка химии и давление выглядеть готовыми раньше, чем система действительно готова.</span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap">
+      <article>
+        <div class="main-col">
+          <section class="card">
+            <h2><span data-lang-en>What This White Paper Solves</span><span data-lang-ru>Какую задачу решает эта white page</span></h2>
+            <p data-lang-en>
+              Most hold cleaning guidance assumes a cleaner world than the one merchant crews actually work in. On board, hold readiness fails not only because residues remain, but because planning is late, bilges are not trusted, hatch covers are treated as a separate issue, drying is underestimated, and office pressure arrives before the ship has a defensible evidence package.
+            </p>
+            <p data-lang-ru>
+              Большинство материалов по hold cleaning исходят из более “чистого” мира, чем тот, в котором реально работают гражданские экипажи. На практике hold readiness проваливается не только потому, что где-то остались residues, а потому что поздно началось planning, bilges не вызывают доверия, hatch covers вынесены за скобки, drying недооценён, а давление офиса приходит раньше, чем у судна появился defensible evidence package.
+            </p>
+            <div class="quick-grid">
+              <div class="quick-box">
+                <strong data-lang-en>Audience</strong>
+                <strong data-lang-ru>Для кого</strong>
+                <p class="muted" data-lang-en>Chief mates, masters, deck officers, bosuns, and merchant ship crews preparing holds for grain or other sensitive cargoes.</p>
+                <p class="muted" data-lang-ru>Старпомы, капитаны, палубные офицеры, боцманы и экипажи, готовящие трюмы под зерно и другие чувствительные грузы.</p>
+              </div>
+              <div class="quick-box">
+                <strong data-lang-en>Core question</strong>
+                <strong data-lang-ru>Ключевой вопрос</strong>
+                <p class="muted" data-lang-en>How do you know a hold is truly ready, not just visually improved?</p>
+                <p class="muted" data-lang-ru>Как понять, что трюм действительно готов, а не просто визуально стал лучше?</p>
+              </div>
+              <div class="quick-box">
+                <strong data-lang-en>Operational context</strong>
+                <strong data-lang-ru>Операционный контекст</strong>
+                <p class="muted" data-lang-en>Short passage, small deck team, imperfect equipment, one HP machine, uncertain coating, and commercial urgency.</p>
+                <p class="muted" data-lang-ru>Короткий переход, маленькая палубная команда, неидеальное оборудование, одна HP machine, слабое покрытие и коммерческая срочность.</p>
+              </div>
+              <div class="quick-box">
+                <strong data-lang-en>Output</strong>
+                <strong data-lang-ru>Результат</strong>
+                <p class="muted" data-lang-en>A practical framework for survey readiness, not only a cleaning sequence.</p>
+                <p class="muted" data-lang-ru>Практический framework для survey readiness, а не только sequence мойки.</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="card">
+            <h2><span data-lang-en>What Surveyors Actually Check</span><span data-lang-ru>Что реально проверяет сюрвейер</span></h2>
+            <p data-lang-en>
+              Surveyors do not inspect effort. They inspect defensible result. In grain-like readiness they usually move through the hold looking for the fastest reason to distrust the ship’s statement that the hold is ready.
+            </p>
+            <p data-lang-ru>
+              Сюрвейер оценивает не усилия экипажа, а defensible result. В grain-like readiness он обычно идёт по трюму, ища самый быстрый повод усомниться в том, что заявление судна о готовности действительно обосновано.
+            </p>
+            <ul data-lang-en>
+              <li>Visible residues in corners, brackets, behind pipe guards, or under deck details.</li>
+              <li>Loose rust, loose paint flakes, or cosmetic painting that looks like disguise.</li>
+              <li>Wet surfaces, damp hidden spots, condensation, or uncertain drying.</li>
+              <li>Residual smell from previous cargo, chemistry, or fresh paint.</li>
+              <li>Dirty or untrusted bilges, strainers, covers, alarms, or drainage logic.</li>
+              <li>Dirty hatch undersides, coamings, drainage channels, and hatch-related contamination paths.</li>
+              <li>A crew that cannot explain what was checked, what was tested, and what remains a limitation.</li>
+            </ul>
+            <ul data-lang-ru>
+              <li>Видимые residues в углах, на brackets, за защитами труб и под deck details.</li>
+              <li>Loose rust, loose paint flakes или покраску, похожую на disguise.</li>
+              <li>Влажные поверхности, damp hidden spots, condensation и слабый drying.</li>
+              <li>Запах предыдущего груза, химии или свежей краски.</li>
+              <li>Грязные или недостоверные bilges, strainers, covers, alarms и drainage logic.</li>
+              <li>Грязные hatch undersides, coamings, drainage channels и hatch-related contamination paths.</li>
+              <li>Ситуацию, когда экипаж не может объяснить, что было проверено, что тестировалось и какие ограничения ещё остались.</li>
+            </ul>
+            <figure class="media">
+              <img src="./residue-removal.jpg" alt="Dry residue removal into big bags before washing">
+              <figcaption>
+                <span data-lang-en>Dry residue removal is not a secondary stage. On many merchant ships it is the moment where time is either saved or lost for the rest of the preparation cycle.</span>
+                <span data-lang-ru>Dry residue removal — не второстепенный этап. На многих судах именно здесь либо экономится, либо теряется время для всего остального цикла подготовки.</span>
+              </figcaption>
+            </figure>
+          </section>
+
+          <section class="card">
+            <h2><span data-lang-en>Why Merchant Crews Fail Even with a Manual</span><span data-lang-ru>Почему гражданские экипажи проваливаются даже при наличии manual</span></h2>
+            <div class="signal-list">
+              <div class="signal warn">
+                <div class="signal-label"><span data-lang-en>Time</span><span data-lang-ru>Время</span></div>
+                <p data-lang-en>Passage is shorter than the actual cleaning scope, but the ship only admits the gap when the surveyor is already near the berth.</p>
+                <p data-lang-ru>Переход короче, чем реальный cleaning scope, но судно признаёт разрыв только тогда, когда сюрвейер уже почти у причала.</p>
+              </div>
+              <div class="signal warn">
+                <div class="signal-label"><span data-lang-en>Crew Size</span><span data-lang-ru>Люди</span></div>
+                <p data-lang-en>Five deck crew for five holds is often enough for basic work, but not enough for aggressive dirty-cargo recovery plus the rest of ship routine.</p>
+                <p data-lang-ru>Пять человек палубной команды на пять трюмов часто достаточно для базовой работы, но недостаточно для aggressive dirty-cargo recovery вместе с остальной жизнью судна.</p>
+              </div>
+              <div class="signal danger">
+                <div class="signal-label"><span data-lang-en>Bilges</span><span data-lang-ru>Bilges</span></div>
+                <p data-lang-en>Bilges are treated like a footer note, although they are often the first place where the entire readiness claim collapses.</p>
+                <p data-lang-ru>Bilges воспринимаются как footer note, хотя именно там часто и ломается всё заявление о готовности.</p>
+              </div>
+              <div class="signal warn">
+                <div class="signal-label"><span data-lang-en>Equipment</span><span data-lang-ru>Оборудование</span></div>
+                <p data-lang-en>One HP machine, weak hoses, missing nozzles, or poor chemical application gear turn a correct procedure into slow improvisation.</p>
+                <p data-lang-ru>Одна HP machine, слабые шланги, отсутствие nozzle или poor chemical application gear превращают правильную процедуру в медленную импровизацию.</p>
+              </div>
+              <div class="signal danger">
+                <div class="signal-label"><span data-lang-en>Drying</span><span data-lang-ru>Сушка</span></div>
+                <p data-lang-en>Crews often count washing hours but not drying, smell-out, ventilation, or re-wetting from bilges and hidden pockets.</p>
+                <p data-lang-ru>Экипажи часто считают washing hours, но не считают drying, smell-out, ventilation и повторное увлажнение от bilges и hidden pockets.</p>
+              </div>
+              <div class="signal good">
+                <div class="signal-label"><span data-lang-en>Reporting</span><span data-lang-ru>Отчётность</span></div>
+                <p data-lang-en>The strongest ships are not those with perfect holds, but those that report reality early and turn resource limits into defendable operational decisions.</p>
+                <p data-lang-ru>Самые сильные суда — не те, где hold идеален, а те, где реальность reported early и ресурсные ограничения превращены в defendable operational decisions.</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="card">
+            <h2><span data-lang-en>Operational Map: From Discharge Complete to Survey Ready</span><span data-lang-ru>Операционная карта: от окончания выгрузки до survey ready</span></h2>
+            <div class="process">
+              <div class="process-step">
+                <div class="num">1</div>
+                <h3><span data-lang-en>Assessment</span><span data-lang-ru>Assessment</span></h3>
+                <p data-lang-en>Define next cargo, required cleanliness standard, and real initial hold condition with photos.</p>
+                <p data-lang-ru>Определить next cargo, required standard и реальное исходное состояние трюмов с фотофиксацией.</p>
+              </div>
+              <div class="process-step">
+                <div class="num">2</div>
+                <h3><span data-lang-en>Readiness</span><span data-lang-ru>Readiness</span></h3>
+                <p data-lang-en>Check people, HP machine, chemicals, bilges, access, PPE, lighting, and likely time deficit.</p>
+                <p data-lang-ru>Проверить людей, HP machine, chemicals, bilges, access, PPE, lighting и вероятный дефицит времени.</p>
+              </div>
+              <div class="process-step">
+                <div class="num">3</div>
+                <h3><span data-lang-en>Dry Cleaning</span><span data-lang-ru>Dry Cleaning</span></h3>
+                <p data-lang-en>Residues, dunnage, lashings, sweep, migration control, and first separation between cleaning and maintenance.</p>
+                <p data-lang-ru>Residues, dunnage, lashings, sweep, migration control и первое разделение между cleaning и maintenance.</p>
+              </div>
+              <div class="process-step">
+                <div class="num">4</div>
+                <h3><span data-lang-en>Choose Branch</span><span data-lang-ru>Выбрать ветку</span></h3>
+                <p data-lang-en>Water only, alkali cleaner, acid cleaner, cement/clinker branch, or AQIS-expanded scope.</p>
+                <p data-lang-ru>Water only, alkali cleaner, acid cleaner, ветка cement/clinker или AQIS-expanded scope.</p>
+              </div>
+              <div class="process-step">
+                <div class="num">5</div>
+                <h3><span data-lang-en>Critical Details</span><span data-lang-ru>Критические детали</span></h3>
+                <p data-lang-en>Bilges, hatch covers, coamings, drain channels, ladders, lower details, and hidden smell/moisture points.</p>
+                <p data-lang-ru>Bilges, hatch covers, coamings, drain channels, ladders, lower details и скрытые точки по smell/moisture.</p>
+              </div>
+              <div class="process-step">
+                <div class="num">6</div>
+                <h3><span data-lang-en>Drying and Survey</span><span data-lang-ru>Drying и Survey</span></h3>
+                <p data-lang-en>Ventilate, dry, self-inspect like a surveyor, build evidence package, then pass survey or escalate limits honestly.</p>
+                <p data-lang-ru>Провентилировать, высушить, пройти self-inspection как сюрвейер, собрать evidence package и либо пройти survey, либо честно эскалировать ограничения.</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="card">
+            <h2><span data-lang-en>Cargo Profile and Likely Cleaning Branch</span><span data-lang-ru>Профиль груза и вероятная cleaning branch</span></h2>
+            <table class="logic-table">
+              <thead>
+                <tr>
+                  <th><span data-lang-en>Previous cargo</span><span data-lang-ru>Предыдущий груз</span></th>
+                  <th><span data-lang-en>Typical target</span><span data-lang-ru>Типовой target</span></th>
+                  <th><span data-lang-en>Likely branch</span><span data-lang-ru>Вероятная ветка</span></th>
+                  <th><span data-lang-en>Frequent failure point</span><span data-lang-ru>Частая точка провала</span></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><span data-lang-en>Coal / coke / petcoke / oily organic residues</span><span data-lang-ru>Coal / coke / petcoke / oily organic residues</span></td>
+                  <td><span data-lang-en>Grain clean or another high standard for next sensitive cargo</span><span data-lang-ru>Grain clean или другой высокий standard под следующий чувствительный груз</span></td>
+                  <td><span data-lang-en>Alkali cleaner + full dry cleaning + FW rinse</span><span data-lang-ru>Alkali cleaner + полный dry cleaning + FW rinse</span></td>
+                  <td><span data-lang-en>Film, dark corners, smell, dirty bilges, false confidence after first wash</span><span data-lang-ru>Плёнка, тёмные углы, запах, грязные bilges, ложная уверенность после первой замывки</span></td>
+                </tr>
+                <tr>
+                  <td><span data-lang-en>Bauxite / bentonite / chrome ore / mineral crust</span><span data-lang-ru>Bauxite / bentonite / chrome ore / mineral crust</span></td>
+                  <td><span data-lang-en>From normal clean to grain clean depending on next cargo</span><span data-lang-ru>От normal clean до grain clean в зависимости от next cargo</span></td>
+                  <td><span data-lang-en>Acid cleaner after test patches</span><span data-lang-ru>Acid cleaner после test patches</span></td>
+                  <td><span data-lang-en>Wrong dilution, coating sensitivity, incomplete flushing</span><span data-lang-ru>Неправильное dilution, слабая coating compatibility, incomplete flushing</span></td>
+                </tr>
+                <tr>
+                  <td><span data-lang-en>Cement / clinker / gypsum</span><span data-lang-ru>Cement / clinker / gypsum</span></td>
+                  <td><span data-lang-en>High standard with special sequence</span><span data-lang-ru>Высокий standard со специальной последовательностью</span></td>
+                  <td><span data-lang-en>Dry removal first, chemical early, water only later</span><span data-lang-ru>Сначала dry removal, химия рано, water только позже</span></td>
+                  <td><span data-lang-en>Early water use, hardened scale, bilge choking</span><span data-lang-ru>Слишком ранняя вода, hardened scale, забитые bilges</span></td>
+                </tr>
+                <tr>
+                  <td><span data-lang-en>Grain / sugar / salt / urea / light dry cargoes</span><span data-lang-ru>Grain / sugar / salt / urea / light dry cargoes</span></td>
+                  <td><span data-lang-en>Often water-based route if initial condition is already under control</span><span data-lang-ru>Часто water-based route, если исходное состояние уже под контролем</span></td>
+                  <td><span data-lang-en>Dry clean + water wash + drying + bilges control</span><span data-lang-ru>Dry clean + water wash + drying + контроль bilges</span></td>
+                  <td><span data-lang-en>Skipping dry stage, wet hold, loose flakes</span><span data-lang-ru>Пропуск dry stage, влажный hold, loose flakes</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+
+          <section class="card">
+            <h2><span data-lang-en>Four Blocks That Decide Whether the Survey Passes</span><span data-lang-ru>Четыре блока, которые решают, пройдёт ли survey</span></h2>
+            <div class="figure-grid">
+              <figure class="media">
+                <img src="./sea-water-wash.jpg" alt="Sea water washing stage in cargo hold">
+                <figcaption>
+                  <span data-lang-en><strong>Washing stage.</strong> The first visual improvement can be deceptive. Water removes bulk residues, but it does not solve hidden film, smell, or weak bilges.</span>
+                  <span data-lang-ru><strong>Washing stage.</strong> Первое визуальное улучшение обманчиво. Вода снимает bulk residues, но не решает hidden film, smell и слабые bilges.</span>
+                </figcaption>
+              </figure>
+              <figure class="media">
+                <img src="./chemical-application.jpg" alt="Chemical application in hold cleaning">
+                <figcaption>
+                  <span data-lang-en><strong>Chemistry.</strong> The question is not “do we have chemicals?” but “did we choose the right branch, test it, dose it, and rinse it properly?”</span>
+                  <span data-lang-ru><strong>Chemistry.</strong> Вопрос не в том, “есть ли химия”, а в том, выбрана ли правильная ветка, протестирована ли она, правильно ли дозирована и нормально ли смыта.</span>
+                </figcaption>
+              </figure>
+              <figure class="media">
+                <img src="./bilges.jpg" alt="Bilges inspection after hold cleaning">
+                <figcaption>
+                  <span data-lang-en><strong>Bilges.</strong> Dirty, wet, distrusted, or untested bilges are one of the fastest ways to turn a “clean hold” into a failed hold.</span>
+                  <span data-lang-ru><strong>Bilges.</strong> Грязные, мокрые, недостоверные или не протестированные bilges — один из самых быстрых способов превратить “чистый hold” в failed hold.</span>
+                </figcaption>
+              </figure>
+              <div class="quick-box">
+                <strong data-lang-en>Hatch Covers and Drying</strong>
+                <strong data-lang-ru>Hatch Covers и Drying</strong>
+                <p class="muted" data-lang-en>
+                  Surveyors often distrust a hold because contamination can return from hatch undersides, coamings, drainage channels, wet details, or residual smell. A hold is not ready just because the tank top looks better.
+                </p>
+                <p class="muted" data-lang-ru>
+                  Сюрвейер часто перестаёт доверять hold не из-за tank top, а из-за того, что загрязнение может вернуться с hatch undersides, coamings, drainage channels, влажных деталей или residual smell. Трюм не ready только потому, что визуально tank top стал лучше.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section class="card">
+            <h2><span data-lang-en>Where Good Chief Mates Separate from Tired Ones</span><span data-lang-ru>Где сильный старпом отделяется от уставшего</span></h2>
+            <p data-lang-en>
+              The strongest chief mate is not the one who pushes the team blindly to “finish at any cost”. The strongest one is the officer who sees when the system is already leaving the safe and defensible zone.
+            </p>
+            <p data-lang-ru>
+              Сильный старпом — не тот, кто слепо дожимает команду “любой ценой”. Сильный старпом — тот, кто видит момент, когда система уже выходит из безопасной и defendable зоны.
+            </p>
+            <ul data-lang-en>
+              <li>Request shore gang early if the gap is structural, not emotional.</li>
+              <li>Separate “must do to pass” from “nice cosmetic improvement”.</li>
+              <li>Do not let painting, polishing, or visual theater replace drying, bilges, and hatch integrity.</li>
+              <li>Record people, hours, weather, equipment, and what ship work had to be sacrificed.</li>
+              <li>Stop promising impossible finish times just to calm the office for one email cycle.</li>
+            </ul>
+            <ul data-lang-ru>
+              <li>Запрашивать shore gang рано, если разрыв структурный, а не эмоциональный.</li>
+              <li>Отделять “must do to pass” от “nice cosmetic improvement”.</li>
+              <li>Не позволять painting, polishing и visual theater подменять drying, bilges и hatch integrity.</li>
+              <li>Фиксировать людей, часы, weather, equipment и то, какой ship work пришлось пожертвовать.</li>
+              <li>Не обещать невозможные finish times только ради одного успокаивающего письма в офис.</li>
+            </ul>
+          </section>
+
+          <section class="card">
+            <h2><span data-lang-en>Pre-Survey Checklist That Actually Matters</span><span data-lang-ru>Pre-survey checklist, который действительно имеет значение</span></h2>
+            <ol data-lang-en>
+              <li>The required cleanliness standard is explicit, not assumed.</li>
+              <li>The hold is visually clean in details, not only on tank top.</li>
+              <li>No loose rust and no loose paint flakes are left in active contamination zones.</li>
+              <li>Bilges are clean, dry, covered, and trusted.</li>
+              <li>Hatch undersides, coamings, drainage channels, and obvious hatch defects are checked.</li>
+              <li>Smell is acceptable and paint or chemicals are not still dominating the space.</li>
+              <li>Drying is confirmed by touch and not only by distance.</li>
+              <li>Officer is ready to accompany the surveyor and answer route-specific questions.</li>
+              <li>Photos exist for initial condition, work in progress, and final status.</li>
+              <li>The ship can explain what was done, what remains a limitation, and why its statement is still defensible.</li>
+            </ol>
+            <ol data-lang-ru>
+              <li>Required cleanliness standard назван явно, а не подразумевается.</li>
+              <li>Hold визуально чист в деталях, а не только по tank top.</li>
+              <li>В активных contamination zones не осталось loose rust и loose paint flakes.</li>
+              <li>Bilges чистые, сухие, накрыты и вызывают доверие.</li>
+              <li>Hatch undersides, coamings, drainage channels и очевидные hatch defects проверены.</li>
+              <li>Smell приемлем, а запах краски или химии уже не dominates the space.</li>
+              <li>Drying подтверждён рукой и осмотром, а не только взглядом издалека.</li>
+              <li>Офицер готов сопровождать surveyor и отвечать на route-specific questions.</li>
+              <li>Есть фото исходного состояния, work in progress и final status.</li>
+              <li>Судно может объяснить, что было сделано, какие ограничения остались и почему его позиция всё ещё defensible.</li>
+            </ol>
+          </section>
+
+          <section class="card">
+            <h2><span data-lang-en>Conclusion</span><span data-lang-ru>Вывод</span></h2>
+            <p data-lang-en>
+              Cargo hold preparation is not a dirty side-task delegated to the deck crew after discharge. It is one of the clearest operating tests of a chief mate, a master, and the whole support chain around the ship.
+            </p>
+            <p data-lang-ru>
+              Подготовка грузовых помещений — не “грязная побочная работа”, которую можно просто передать палубной команде после discharge. Это один из самых наглядных operational tests старпома, капитана и всей support chain вокруг судна.
+            </p>
+            <p data-lang-en>
+              If the system is strong, even a difficult hold can become survey-ready. If the system is weak, even a good manual turns into a list of beautiful instructions that do not save the crew from rejection, delay, and avoidable pressure.
+            </p>
+            <p data-lang-ru>
+              Если система сильная, даже тяжёлый hold можно довести до survey-ready состояния. Если система слабая, даже хороший manual превращается в список красивых инструкций, которые не спасают экипаж от rejection, delay и лишнего давления.
+            </p>
+          </section>
+        </div>
+
+        <aside class="side-col">
+          <section class="card sticky-card">
+            <h2><span data-lang-en>What You Can Use Right Now</span><span data-lang-ru>Что можно использовать сразу</span></h2>
+            <ul data-lang-en>
+              <li>This white paper as a web authority page.</li>
+              <li>The full illustrated PDF handbook.</li>
+              <li>The cargo officer course as the broader training layer.</li>
+            </ul>
+            <ul data-lang-ru>
+              <li>Эту white page как web authority page.</li>
+              <li>Полный illustrated PDF-handbook.</li>
+              <li>Курс грузового офицера как более широкий training layer.</li>
+            </ul>
+            <div class="side-cta">
+              <a class="btn btn-primary" href="./cargo-hold-preparation-handbook.pdf">
+                <span data-lang-en>Open PDF Handbook</span>
+                <span data-lang-ru>Открыть PDF-handbook</span>
+              </a>
+              <a class="btn btn-secondary" href="/why-hold-cleanliness-inspections-fail/">
+                <span data-lang-en>Why Inspections Fail</span>
+                <span data-lang-ru>Почему inspection fail</span>
+              </a>
+              <a class="btn btn-secondary" href="https://academy.capt-tymur.com/cargo-officer-course.html" target="_blank" rel="noopener">
+                <span data-lang-en>Go to Academy</span>
+                <span data-lang-ru>Перейти в академию</span>
+              </a>
+            </div>
+          </section>
+
+          <section class="card sticky-card">
+            <h2><span data-lang-en>Key Search Angles</span><span data-lang-ru>Ключевые поисковые углы</span></h2>
+            <ul data-lang-en>
+              <li>How to prepare cargo holds for grain standard.</li>
+              <li>Why hold cleanliness inspections fail.</li>
+              <li>Bilges, hatch covers, and drying before grain survey.</li>
+              <li>Chief mate checklist before hold survey.</li>
+            </ul>
+            <ul data-lang-ru>
+              <li>Как подготовить трюмы под grain standard.</li>
+              <li>Почему fail’ится hold cleanliness inspection.</li>
+              <li>Bilges, hatch covers и drying перед grain survey.</li>
+              <li>Чек-лист старпома перед survey трюмов.</li>
+            </ul>
+            <p data-lang-en style="margin-top:1rem;">
+              Companion page: <a href="/why-hold-cleanliness-inspections-fail/">why hold cleanliness inspections fail</a>.
+            </p>
+            <p data-lang-ru style="margin-top:1rem;">
+              Связанная страница: <a href="/why-hold-cleanliness-inspections-fail/">почему hold cleanliness inspections fail</a>.
+            </p>
+          </section>
+        </aside>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <span data-lang-en>&copy; 2026 Tymur Rudov. White paper route for cargo hold preparation.</span>
+    <span data-lang-ru>&copy; 2026 Тимур Рудов. White page по подготовке грузовых помещений.</span>
+  </footer>
+
+  <script>
+  (function () {
+    const html = document.documentElement;
+    const langBtn = document.getElementById('langToggle');
+
+    function setLang(lang) {
+      html.lang = lang;
+      langBtn.textContent = lang === 'en' ? 'RU' : 'EN';
+      localStorage.setItem('lang', lang);
+    }
+
+    const stored = localStorage.getItem('lang');
+    if (stored) {
+      setLang(stored);
+    } else {
+      const browserLang = (navigator.language || '').toLowerCase();
+      setLang(browserLang.startsWith('ru') ? 'ru' : 'en');
+    }
+
+    langBtn.addEventListener('click', function () {
+      setLang(html.lang === 'en' ? 'ru' : 'en');
+    });
+  })();
+  </script>
+</body>
+</html>

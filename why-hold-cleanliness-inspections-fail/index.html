@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Why Hold Cleanliness Inspections Fail | White Paper | Tymur Rudov</title>
+  <meta name="description" content="White paper by Tymur Rudov on why hold cleanliness inspections fail on merchant ships: hidden residues, bilges, hatch covers, drying, cosmetic painting, weak reporting, and chief mate mistakes before survey.">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://tymur.org/why-hold-cleanliness-inspections-fail/">
+  <meta property="og:title" content="Why Hold Cleanliness Inspections Fail | White Paper">
+  <meta property="og:description" content="A practical white paper for chief mates and merchant crews on the real reasons hold cleanliness inspections fail.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://tymur.org/why-hold-cleanliness-inspections-fail/">
+  <meta property="og:site_name" content="tymur.org">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Why Hold Cleanliness Inspections Fail | White Paper">
+  <meta name="twitter:description" content="Practical white paper on why surveyors reject cargo holds and what chief mates should control before calling the survey.">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Why Hold Cleanliness Inspections Fail",
+      "author": {
+        "@type": "Person",
+        "name": "Tymur Rudov"
+      },
+      "publisher": {
+        "@type": "Person",
+        "name": "Tymur Rudov"
+      },
+      "datePublished": "2026-03-28",
+      "dateModified": "2026-03-28",
+      "inLanguage": ["en", "ru"],
+      "url": "https://tymur.org/why-hold-cleanliness-inspections-fail/",
+      "about": [
+        "Hold cleanliness inspection",
+        "Grain survey",
+        "Chief mate",
+        "Bulk carrier operations",
+        "Cargo holds"
+      ]
+    }
+  </script>
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --bg: #070d1a;
+      --card: #111d36;
+      --card-soft: #152544;
+      --text: #e4eaf4;
+      --muted: #92a0b6;
+      --accent: #0ea5e9;
+      --accent-soft: rgba(14, 165, 233, 0.12);
+      --border: #1a2d4a;
+      --danger: #f97316;
+      --warn: #f59e0b;
+      --good: #84cc16;
+      --radius: 16px;
+    }
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      background:
+        radial-gradient(ellipse 55% 35% at 50% 0%, rgba(249,115,22,0.12), transparent),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.78;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--accent); }
+    nav {
+      position: sticky; top: 0; z-index: 20;
+      display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+      padding: 1rem 1.5rem; background: rgba(7,13,26,0.9);
+      backdrop-filter: blur(14px); border-bottom: 1px solid var(--border);
+    }
+    .nav-logo, .nav-links a { font-family: Arial, sans-serif; text-decoration: none; }
+    .nav-logo { color: var(--text); font-weight: 700; font-size: 1.05rem; }
+    .nav-links { display: flex; align-items: center; gap: 1rem; list-style: none; flex-wrap: wrap; }
+    .nav-links a { color: var(--muted); font-size: 0.92rem; }
+    .nav-links a:hover { color: var(--accent); }
+    .lang-btn {
+      background: var(--accent-soft); border: 1px solid var(--border); color: var(--accent);
+      padding: 0.35rem 0.75rem; border-radius: 8px; cursor: pointer;
+      font-family: Arial, sans-serif; font-size: 0.82rem; font-weight: 700;
+    }
+    .wrap { max-width: 1120px; margin: 0 auto; padding: 0 1.4rem; }
+    header { padding: 4.5rem 0 2.2rem; border-bottom: 1px solid var(--border); }
+    .back-link {
+      display: inline-block; margin-bottom: 1rem; color: var(--accent); text-decoration: none;
+      font-family: Arial, sans-serif; font-size: 0.92rem;
+    }
+    .eyebrow {
+      display: inline-block; margin-bottom: 1rem; padding: 0.35rem 0.8rem; border-radius: 999px;
+      background: rgba(249,115,22,0.12); color: #fb923c; font-family: Arial, sans-serif;
+      font-size: 0.76rem; letter-spacing: 0.08em; text-transform: uppercase;
+    }
+    h1 { font-size: clamp(2.25rem, 5vw, 4rem); line-height: 1.06; margin-bottom: 1rem; max-width: 980px; }
+    .lead { max-width: 920px; color: var(--muted); font-size: 1.08rem; margin-bottom: 1.5rem; }
+    .meta { font-family: Arial, sans-serif; color: var(--muted); font-size: 0.92rem; margin-bottom: 1.4rem; }
+    .cta-row { display: flex; gap: 0.9rem; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+      padding: 0.88rem 1.25rem; border-radius: 10px; text-decoration: none;
+      font-family: Arial, sans-serif; font-weight: 700; font-size: 0.92rem;
+      border: 1px solid var(--border);
+    }
+    .btn-primary { background: var(--accent); color: #04101d; border-color: transparent; }
+    .btn-secondary { color: var(--text); background: transparent; }
+    .hero-note {
+      margin-top: 1.35rem; padding: 1rem 1.15rem; border-radius: 14px; border: 1px solid var(--border);
+      background: rgba(255,255,255,0.03); font-family: Arial, sans-serif; font-size: 0.93rem; color: var(--muted);
+      max-width: 980px;
+    }
+    main { padding: 2rem 0 5rem; }
+    article { display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: 1.4rem; align-items: start; }
+    .main-col { min-width: 0; }
+    .side-col { position: sticky; top: 86px; display: flex; flex-direction: column; gap: 1rem; }
+    .card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1.45rem; margin-bottom: 1.25rem; overflow: hidden;
+    }
+    .card h2 { font-family: Arial, sans-serif; font-size: 1.32rem; line-height: 1.25; margin-bottom: 0.8rem; }
+    .card p { color: var(--text); margin-bottom: 1rem; }
+    .card p:last-child { margin-bottom: 0; }
+    ul, ol { padding-left: 1.2rem; margin-bottom: 1rem; }
+    li { margin-bottom: 0.5rem; color: var(--text); }
+    .failure-grid {
+      display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.9rem; margin-top: 1rem;
+    }
+    .failure-box {
+      border: 1px solid var(--border); border-radius: 14px; padding: 1rem; background: var(--card-soft);
+    }
+    .failure-box strong {
+      display: block; margin-bottom: 0.45rem; font-family: Arial, sans-serif; font-size: 0.9rem; color: #fb923c;
+    }
+    .ladder {
+      display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 0.9rem; margin-top: 1rem;
+    }
+    .step {
+      background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: 14px; padding: 1rem;
+    }
+    .step .num {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 34px; height: 34px; border-radius: 999px; background: rgba(249,115,22,0.12);
+      color: #fb923c; font-family: Arial, sans-serif; font-weight: 700; margin-bottom: 0.7rem;
+    }
+    .step h3 { font-family: Arial, sans-serif; font-size: 1rem; margin: 0 0 0.5rem 0; }
+    .figure-grid {
+      display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; margin-top: 1rem;
+    }
+    figure.media {
+      margin: 0; background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: 14px; overflow: hidden;
+    }
+    figure.media img { display: block; width: 100%; height: 210px; object-fit: cover; background: #0a1324; }
+    figure.media figcaption { padding: 0.9rem 1rem; font-family: Arial, sans-serif; font-size: 0.86rem; color: var(--muted); }
+    .question-list {
+      display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 0.9rem; margin-top: 1rem;
+    }
+    .question {
+      border: 1px solid var(--border); border-radius: 14px; padding: 1rem; background: rgba(255,255,255,0.02);
+      font-family: Arial, sans-serif; color: var(--text); font-size: 0.93rem; line-height: 1.6;
+    }
+    .sticky-card h2 { font-size: 1.05rem; margin-bottom: 0.7rem; }
+    .sticky-card p, .sticky-card li { font-family: Arial, sans-serif; font-size: 0.92rem; line-height: 1.65; color: var(--muted); }
+    .sticky-card ul { margin-bottom: 0; }
+    .side-cta { display: flex; flex-direction: column; gap: 0.75rem; margin-top: 1rem; }
+    .side-cta .btn { width: 100%; }
+    footer {
+      padding: 2rem; text-align: center; border-top: 1px solid var(--border);
+      color: var(--muted); font-family: Arial, sans-serif; font-size: 0.82rem; background: var(--bg);
+    }
+    [data-lang-ru] { display: none; }
+    html[lang="ru"] [data-lang-en] { display: none; }
+    html[lang="ru"] [data-lang-ru] { display: initial; }
+    @media (max-width: 980px) {
+      article { grid-template-columns: 1fr; }
+      .side-col { position: static; }
+      .ladder, .figure-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 760px) {
+      nav { padding: 1rem; flex-wrap: wrap; }
+      .wrap { padding: 0 1rem; }
+      .failure-grid, .ladder, .figure-grid, .question-list { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="/" class="nav-logo">tymur.org</a>
+    <ul class="nav-links">
+      <li><a href="/"><span data-lang-en>Home</span><span data-lang-ru>Главная</span></a></li>
+      <li><a href="/mk/"><span data-lang-en>Maritime Classes</span><span data-lang-ru>Мореходные классы</span></a></li>
+      <li><a href="/cargo-hold-preparation-grain-standard/"><span data-lang-en>Hold Preparation</span><span data-lang-ru>Подготовка трюмов</span></a></li>
+      <li><button class="lang-btn" id="langToggle">RU</button></li>
+    </ul>
+  </nav>
+
+  <header>
+    <div class="wrap">
+      <a class="back-link" href="/cargo-hold-preparation-grain-standard/"><span data-lang-en>← Companion page: Cargo Hold Preparation for Grain Standard</span><span data-lang-ru>← Связанная страница: Подготовка трюмов под grain standard</span></a>
+      <span class="eyebrow"><span data-lang-en>White Paper</span><span data-lang-ru>Белая страница</span></span>
+      <h1>
+        <span data-lang-en>Why Hold Cleanliness Inspections Fail</span>
+        <span data-lang-ru>Почему fail'ятся hold cleanliness inspections</span>
+      </h1>
+      <p class="lead" data-lang-en>
+        A practical white paper on why apparently “almost ready” cargo holds still fail inspection on merchant ships. This page focuses on the real rejection routes: hidden residues, weak bilges, hatch-related contamination, drying mistakes, cosmetic painting, and weak reporting before survey.
+      </p>
+      <p class="lead" data-lang-ru>
+        Практическая white page о том, почему apparently “почти готовые” грузовые помещения всё равно fail'ятся на inspection на гражданских судах. Здесь фокус на реальных rejection routes: hidden residues, weak bilges, hatch-related contamination, ошибки drying, cosmetic painting и слабая отчётность перед survey.
+      </p>
+      <div class="meta">
+        <span data-lang-en>28 March 2026 · Tymur Rudov · Companion white paper to the hold preparation guide</span>
+        <span data-lang-ru>28 марта 2026 · Тимур Рудов · Связанная white page к гайду по подготовке трюмов</span>
+      </div>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="/cargo-hold-preparation-grain-standard/">
+          <span data-lang-en>Open the Main Hold Preparation Page</span>
+          <span data-lang-ru>Открыть основную страницу по подготовке трюмов</span>
+        </a>
+        <a class="btn btn-secondary" href="/cargo-hold-preparation-grain-standard/cargo-hold-preparation-handbook.pdf">
+          <span data-lang-en>Open Full PDF Handbook</span>
+          <span data-lang-ru>Открыть полный PDF-handbook</span>
+        </a>
+      </div>
+      <div class="hero-note">
+        <span data-lang-en>The dangerous phrase on board is not “the hold is dirty”. It is “the hold is almost ready”. Most failures happen in that deceptive zone between visible improvement and defensible readiness.</span>
+        <span data-lang-ru>Самая опасная фраза на борту — не “трюм грязный”. Самая опасная фраза — “трюм почти готов”. Большинство fail происходит именно в этой обманчивой зоне между видимым улучшением и defendable readiness.</span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap">
+      <article>
+        <div class="main-col">
+          <section class="card">
+            <h2><span data-lang-en>What “Fail” Usually Means in Practice</span><span data-lang-ru>Что обычно означает “fail” на практике</span></h2>
+            <p data-lang-en>
+              A failed hold cleanliness inspection is rarely about one dramatic defect. More often it is the result of several weak signals coming together: one doubtful bilge, one smell pocket, one dirty bracket line, one wet corner, one fresh paint note, and one officer who cannot explain what was checked.
+            </p>
+            <p data-lang-ru>
+              Failed hold cleanliness inspection редко случается из-за одного драматичного дефекта. Чаще это результат того, что несколько слабых сигналов сходятся вместе: один сомнительный bilge, один smell pocket, одна грязная линия по brackets, один мокрый угол, одна свежая paint note и один офицер, который не может объяснить, что реально было проверено.
+            </p>
+          </section>
+
+          <section class="card">
+            <h2><span data-lang-en>The Main Failure Routes</span><span data-lang-ru>Главные routes к fail</span></h2>
+            <div class="failure-grid">
+              <div class="failure-box">
+                <strong><span data-lang-en>1. Hidden Residues</span><span data-lang-ru>1. Hidden Residues</span></strong>
+                <p class="muted" data-lang-en>Bulk surfaces improved, but residues remain under pipes, behind guards, in bracket toes, or high corners.</p>
+                <p class="muted" data-lang-ru>Bulk surfaces улучшены, но residues остались под трубами, за защитами, в bracket toes или в верхних углах.</p>
+              </div>
+              <div class="failure-box">
+                <strong><span data-lang-en>2. Bilges Not Trusted</span><span data-lang-ru>2. Bilges не вызывают доверия</span></strong>
+                <p class="muted" data-lang-en>Bilges look secondary to the crew, but they look central to the surveyor.</p>
+                <p class="muted" data-lang-ru>Bilges кажутся экипажу второстепенными, а сюрвейеру — центральными.</p>
+              </div>
+              <div class="failure-box">
+                <strong><span data-lang-en>3. Hatch-Related Recontamination</span><span data-lang-ru>3. Hatch-related recontamination</span></strong>
+                <p class="muted" data-lang-en>Dirty hatch undersides, coamings, drain channels, or poor hatch integrity make the cleaned hold look unstable.</p>
+                <p class="muted" data-lang-ru>Грязные hatch undersides, coamings, drain channels или слабая hatch integrity делают cleaned hold недостоверным.</p>
+              </div>
+              <div class="failure-box">
+                <strong><span data-lang-en>4. Wet but “Almost Dry” Holds</span><span data-lang-ru>4. Wet, но “почти dry” трюмы</span></strong>
+                <p class="muted" data-lang-en>Crews call survey too early, before drying, smell-out, and hidden moisture are actually controlled.</p>
+                <p class="muted" data-lang-ru>Экипажи вызывают survey слишком рано, до того как drying, smell-out и hidden moisture реально взяты под контроль.</p>
+              </div>
+              <div class="failure-box">
+                <strong><span data-lang-en>5. Cosmetic Painting</span><span data-lang-ru>5. Cosmetic painting</span></strong>
+                <p class="muted" data-lang-en>Fresh paint raises suspicion if it smells, hides defects, or looks like a shortcut instead of genuine readiness work.</p>
+                <p class="muted" data-lang-ru>Свежая краска вызывает подозрение, если пахнет, скрывает дефекты или выглядит как shortcut вместо genuine readiness work.</p>
+              </div>
+              <div class="failure-box">
+                <strong><span data-lang-en>6. Weak Reporting</span><span data-lang-ru>6. Weak reporting</span></strong>
+                <p class="muted" data-lang-en>No photos, no progress logic, no explanation of resource limits. The ship then looks careless instead of overloaded.</p>
+                <p class="muted" data-lang-ru>Нет фото, нет progress logic, нет объяснения resource limits. Судно выглядит careless, а не overloaded.</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="card">
+            <h2><span data-lang-en>How a Hold Moves from “Almost Ready” to “Rejected”</span><span data-lang-ru>Как hold переходит из “почти ready” в “rejected”</span></h2>
+            <div class="ladder">
+              <div class="step">
+                <div class="num">1</div>
+                <h3><span data-lang-en>Visual Improvement</span><span data-lang-ru>Visual improvement</span></h3>
+                <p data-lang-en>The hold looks far better than before, so the team feels the job is basically done.</p>
+                <p data-lang-ru>Hold выглядит значительно лучше, и команда чувствует, что работа по сути закончена.</p>
+              </div>
+              <div class="step">
+                <div class="num">2</div>
+                <h3><span data-lang-en>Critical Details Skipped</span><span data-lang-ru>Критические детали пропущены</span></h3>
+                <p data-lang-en>Bilges, hidden corners, hatch undersides, drain channels, and smell pockets remain weak.</p>
+                <p data-lang-ru>Bilges, hidden corners, hatch undersides, drain channels и smell pockets остаются слабыми местами.</p>
+              </div>
+              <div class="step">
+                <div class="num">3</div>
+                <h3><span data-lang-en>Survey Called Too Early</span><span data-lang-ru>Survey вызван слишком рано</span></h3>
+                <p data-lang-en>The ship wants confirmation before it has a defendable operational story.</p>
+                <p data-lang-ru>Судно хочет confirmation раньше, чем у него появилась defendable operational story.</p>
+              </div>
+              <div class="step">
+                <div class="num">4</div>
+                <h3><span data-lang-en>Trust Breaks Fast</span><span data-lang-ru>Доверие ломается быстро</span></h3>
+                <p data-lang-en>Once the surveyor finds one serious weak point, the rest of the hold is judged through distrust.</p>
+                <p data-lang-ru>Как только сюрвейер находит одну серьёзную слабую точку, весь остальной hold оценивается уже через призму distrust.</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="card">
+            <h2><span data-lang-en>Three Visual Signals Surveyors Read Quickly</span><span data-lang-ru>Три визуальных сигнала, которые сюрвейер считывает быстро</span></h2>
+            <div class="figure-grid">
+              <figure class="media">
+                <img src="../cargo-hold-preparation-grain-standard/residue-removal.jpg" alt="Dry residue removal before washing">
+                <figcaption>
+                  <span data-lang-en><strong>Residue discipline.</strong> If dry removal was weak, later washing stages often only spread the problem more evenly.</span>
+                  <span data-lang-ru><strong>Residue discipline.</strong> Если dry removal была слабой, later washing stages часто просто размазывают проблему более равномерно.</span>
+                </figcaption>
+              </figure>
+              <figure class="media">
+                <img src="../cargo-hold-preparation-grain-standard/chemical-application.jpg" alt="Chemical branch example">
+                <figcaption>
+                  <span data-lang-en><strong>Chemical branch.</strong> Wrong chemistry or weak rinsing creates a hold that may look cleaner but smell less defensible.</span>
+                  <span data-lang-ru><strong>Chemical branch.</strong> Неправильная химия или слабый rinsing создают hold, который может выглядеть чище, но пахнуть менее defensible.</span>
+                </figcaption>
+              </figure>
+              <figure class="media">
+                <img src="../cargo-hold-preparation-grain-standard/bilges.jpg" alt="Bilges inspection">
+                <figcaption>
+                  <span data-lang-en><strong>Bilges.</strong> One doubtful bilge can outweigh a large amount of good-looking steelwork.</span>
+                  <span data-lang-ru><strong>Bilges.</strong> Один сомнительный bilge может перевесить большое количество visually good steelwork.</span>
+                </figcaption>
+              </figure>
+            </div>
+          </section>
+
+          <section class="card">
+            <h2><span data-lang-en>Questions a Chief Mate Should Ask Before Calling Survey</span><span data-lang-ru>Вопросы, которые старпом должен задать себе до вызова survey</span></h2>
+            <div class="question-list">
+              <div class="question"><span data-lang-en>Have I checked the places a surveyor will choose, not just the places I prefer to show?</span><span data-lang-ru>Проверил ли я те места, которые выберет сюрвейер, а не только те, которые мне удобнее показать?</span></div>
+              <div class="question"><span data-lang-en>Are bilges merely cleaned, or are they trusted, dry, and explainable?</span><span data-lang-ru>Bilges просто cleaned или действительно trusted, dry и explainable?</span></div>
+              <div class="question"><span data-lang-en>Can contamination return from hatch undersides, coamings, or drainage channels?</span><span data-lang-ru>Может ли contamination вернуться с hatch undersides, coamings или drainage channels?</span></div>
+              <div class="question"><span data-lang-en>Is the hold dry by touch, not by hopeful distance view?</span><span data-lang-ru>Hold dry по ощущениям и проверке рукой, а не по hopeful distance view?</span></div>
+              <div class="question"><span data-lang-en>Does any fresh smell from paint or chemistry still dominate the space?</span><span data-lang-ru>Не доминирует ли в пространстве fresh smell от paint или chemistry?</span></div>
+              <div class="question"><span data-lang-en>Did we choose the right cleaner branch, or only the available one?</span><span data-lang-ru>Выбрали ли мы правильную cleaner branch, или просто ту, что была под рукой?</span></div>
+              <div class="question"><span data-lang-en>Do photos show progress, details, and limits, or only the cleanest angles?</span><span data-lang-ru>Фото показывают progress, details и limits или только самые выгодные углы?</span></div>
+              <div class="question"><span data-lang-en>If the surveyor asks “what still worries you?”, do I have an honest professional answer?</span><span data-lang-ru>Если сюрвейер спросит “что вас ещё беспокоит?”, есть ли у меня честный профессиональный ответ?</span></div>
+            </div>
+          </section>
+
+          <section class="card">
+            <h2><span data-lang-en>Conclusion</span><span data-lang-ru>Вывод</span></h2>
+            <p data-lang-en>
+              Holds do not fail inspection because crews are lazy by default. They fail because weak systems produce weak endings: late planning, poor segregation between cleaning and maintenance, untrusted bilges, rushed drying, and survey requests made before the ship has a believable operational position.
+            </p>
+            <p data-lang-ru>
+              Holds fail'ятся не потому, что экипажи по умолчанию ленивы. Они fail'ятся потому, что слабые системы дают слабый финал: позднее planning, плохое разделение cleaning и maintenance, недостоверные bilges, rushed drying и вызов survey раньше, чем у судна появляется believable operational position.
+            </p>
+            <p data-lang-en>
+              The strongest chief mate is not the one who creates the cleanest theater. It is the one who knows when the hold is genuinely ready, when it is still weak, and when the ship must ask for support instead of pretending.
+            </p>
+            <p data-lang-ru>
+              Сильный старпом — не тот, кто создаёт самый красивый театр чистоты. Сильный старпом — тот, кто понимает, когда hold действительно ready, когда он ещё weak, и когда судну нужно просить support, а не pretending.
+            </p>
+          </section>
+        </div>
+
+        <aside class="side-col">
+          <section class="card sticky-card">
+            <h2><span data-lang-en>Use This With</span><span data-lang-ru>Использовать вместе с</span></h2>
+            <ul data-lang-en>
+              <li>The main white paper on cargo hold preparation for grain standard.</li>
+              <li>The full illustrated PDF handbook.</li>
+              <li>The cargo officer course in the Academy.</li>
+            </ul>
+            <ul data-lang-ru>
+              <li>Основной white page по подготовке трюмов под grain standard.</li>
+              <li>Полный illustrated PDF-handbook.</li>
+              <li>Курс грузового офицера в Academy.</li>
+            </ul>
+            <div class="side-cta">
+              <a class="btn btn-primary" href="/cargo-hold-preparation-grain-standard/">
+                <span data-lang-en>Main Hold Preparation Page</span>
+                <span data-lang-ru>Основная страница по подготовке трюмов</span>
+              </a>
+              <a class="btn btn-secondary" href="/cargo-hold-preparation-grain-standard/cargo-hold-preparation-handbook.pdf">
+                <span data-lang-en>Open PDF Handbook</span>
+                <span data-lang-ru>Открыть PDF-handbook</span>
+              </a>
+            </div>
+          </section>
+
+          <section class="card sticky-card">
+            <h2><span data-lang-en>Search Intent</span><span data-lang-ru>Search intent</span></h2>
+            <ul data-lang-en>
+              <li>Why hold cleanliness inspections fail.</li>
+              <li>Typical reasons grain survey rejects holds.</li>
+              <li>Hidden causes of hold preparation failure.</li>
+              <li>Chief mate mistakes before hold survey.</li>
+            </ul>
+            <ul data-lang-ru>
+              <li>Почему hold cleanliness inspections fail.</li>
+              <li>Типовые причины reject на grain survey.</li>
+              <li>Скрытые причины провала hold preparation.</li>
+              <li>Ошибки старпома перед hold survey.</li>
+            </ul>
+          </section>
+        </aside>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <span data-lang-en>&copy; 2026 Tymur Rudov. White paper on failed hold cleanliness inspections.</span>
+    <span data-lang-ru>&copy; 2026 Тимур Рудов. White page о причинах fail на hold cleanliness inspection.</span>
+  </footer>
+
+  <script>
+  (function () {
+    const html = document.documentElement;
+    const langBtn = document.getElementById('langToggle');
+    function setLang(lang) {
+      html.lang = lang;
+      langBtn.textContent = lang === 'en' ? 'RU' : 'EN';
+      localStorage.setItem('lang', lang);
+    }
+    const stored = localStorage.getItem('lang');
+    if (stored) {
+      setLang(stored);
+    } else {
+      const browserLang = (navigator.language || '').toLowerCase();
+      setLang(browserLang.startsWith('ru') ? 'ru' : 'en');
+    }
+    langBtn.addEventListener('click', function () {
+      setLang(html.lang === 'en' ? 'ru' : 'en');
+    });
+  })();
+  </script>
+</body>
+</html>

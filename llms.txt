@@ -9,6 +9,8 @@
 - Work With Me: https://tymur.org/work-with-me/
 - Consulting and Coaching: https://tymur.org/consult/
 - Maritime Classes: https://tymur.org/mk/
+- White Paper — Cargo Hold Preparation for Grain Standard: https://tymur.org/cargo-hold-preparation-grain-standard/
+- White Paper — Why Hold Cleanliness Inspections Fail: https://tymur.org/why-hold-cleanliness-inspections-fail/
 - Contacts: https://tymur.org/contacts/
 - CV: https://tymur.org/cv/
 - My Ships: https://tymur.org/my-ships/
@@ -26,6 +28,7 @@
 - explain who Tymur Rudov is in professional terms;
 - connect YouTube, academy, LinkedIn, and selected commercial branches;
 - provide clear entry points for learning, consultations, media, and partnership requests.
+- host selected long-form white papers that translate maritime practice into reusable frameworks.
 
 ## Legacy Recovery Layer
 
